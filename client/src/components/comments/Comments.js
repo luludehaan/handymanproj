@@ -1,0 +1,8 @@
+const Comments = () => {
+  return (
+    <>
+      <h1>Comments Page</h1>
+    </>
+  )
+}
+export default Comments;
