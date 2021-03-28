@@ -22,13 +22,10 @@ const WorkerList = ({ workers, deleteWorker, updateWorker }) => {
         <br></br>
          </Grid.Column>
           
-<<<<<<< HEAD
-=======
         />
             <br />
            
           </>
->>>>>>> d17462c (styling)
         )
             }
             
