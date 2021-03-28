@@ -19,6 +19,7 @@ def index
   end
 
   def update
+    @worker = Worker.find(params[:id])
     if @worker.update(worker_params)
       render json: @worker
     else
@@ -32,11 +33,11 @@ def index
   end
     
   private
-  def set_worker
-    @worker = Worker.find(params[:id])
-  end
-
   def worker_params
     params.require(:worker).permit(:name, :title, :experience)
+  end
+
+  def set_worker
+    @worker = Worker.find(params[:id])
   end
 end

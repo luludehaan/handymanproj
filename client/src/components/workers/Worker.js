@@ -13,12 +13,13 @@ class Worker extends Component {
   
   render() {
     const { editing } = this.state
-    const { id, name, title, experience,} = this.props.location.state
+    const { id, name, title, experience, deleteWorker} = this.props
     return (
       <>
-        <h1>{name}</h1>
+        <h3>Name: {name}</h3>
         <p>Title: {title}</p>
         <p>Experience: {experience}</p>
+        <button onClick={() => deleteWorker(id)}>Delete Handyman</button>
           {
           editing ? 
             <WorkerForm 
@@ -26,11 +27,11 @@ class Worker extends Component {
               toggleForm={this.toggleForm}
             />
           :
-          <button onClick={() => this.toggleForm()}>Edit</button>
+            <button onClick={() => this.toggleForm()}>Edit</button>
+          
         }
          <br />
-        <h1 >Services</h1>
-        <hr></hr>
+        <h3>{name}'s Services</h3>
         <Services workerId={id} />
       </>
     )

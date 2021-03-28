@@ -1,11 +1,14 @@
 const Service = ({ job, description, price, id, deleteService }) => {
+  
   return (
+    
     <>
-      <h1>{job}</h1>
-      <h3>Price: { price }</h3>
+      <h3>{job}</h3>
+      <h4>Price: { price }</h4>
       <p>{description}</p>
+     
       <button onClick={() => deleteService(id)}>
-        Delete
+        Delete Service
       </button>
     </>
   )

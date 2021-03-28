@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 class WorkerForm extends Component {
-  state = { name:"", title:"", experience:"", editing: false}
+  state = { name:"", title:"", experience:"" }
 
   componentDidMount() {
     if (this.props.id) {

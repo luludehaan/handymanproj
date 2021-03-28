@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Worker from './Worker';
 
 const WorkerList = ({ workers, deleteWorker, updateWorker }) => {
   return (
@@ -6,18 +7,15 @@ const WorkerList = ({ workers, deleteWorker, updateWorker }) => {
       {
         workers.map( w => 
           <>
-            <Link
-              to={{
-                pathname: `/workers/${w.id}`,
-                state: { ...w }
-              }}>
-              {w.name}
-            </Link>
+            <Worker
+          key={w.id}
+          {...w}
+          deleteWorker={deleteWorker}
+          updateWorker={updateWorker}
+          
+        />
             <br />
-            <button onClick={() => deleteWorker(w.id)}>Delete</button>
-            <br />
-            <br />
-            <br />
+            <hr></hr>
           </>
         )
       }
