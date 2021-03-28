@@ -34,6 +34,6 @@ before_action :set_service
     end
     
     def set_service
-      @service = service.find(params[:service_id])
+      @service = Service.find(params[:service_id])
     end
 end
