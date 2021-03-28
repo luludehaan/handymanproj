@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Services from '../services/Services';
 import WorkerForm from '../workers/WorkerForm';
+import { Card, Icon, Image } from 'semantic-ui-react';
   
 class Worker extends Component {
  
@@ -16,9 +17,11 @@ class Worker extends Component {
     const { id, name, title, experience,} = this.props.location.state
     return (
       <>
-        <h1>{name}</h1>
+      <Card>
+        <Card.Content>
+        <Card.Header>{name}</Card.Header>
         <p>Title: {title}</p>
-        <p>Experience: {experience}</p>
+        <Card.Description>Experience: {experience}</Card.Description>
           {
           editing ? 
             <WorkerForm 
@@ -32,6 +35,8 @@ class Worker extends Component {
         <h1 >Services</h1>
         <hr></hr>
         <Services workerId={id} />
+        </Card.Content>
+        </Card>
       </>
     )
   }
