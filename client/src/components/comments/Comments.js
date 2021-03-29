@@ -26,7 +26,7 @@ class Comments extends Component {
     axios.delete(`/api/services/${serviceId}/comments/${id}`)
       .then( res => {
         const { comments } = this.state 
-        this.setState({ comments: comments.filter( s => s.id !== id )})
+        this.setState({ comments: comments.filter( c => c.id !== id )})
       })
       .catch( err => console.log(err))
   }
