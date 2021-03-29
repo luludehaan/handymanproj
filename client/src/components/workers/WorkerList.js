@@ -22,10 +22,6 @@ const WorkerList = ({ workers, deleteWorker, updateWorker }) => {
         <br></br>
          </Grid.Column>
           
-        />
-            <br />
-           
-          </>
         )
             }
             
