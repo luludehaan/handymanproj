@@ -1,8 +1,24 @@
 import { Component } from 'react';
 import Services from '../services/Services';
 import WorkerForm from '../workers/WorkerForm';
-import { Card, Icon, Image } from 'semantic-ui-react';
+import { Card, Grid, GridColumn, Icon, Image } from 'semantic-ui-react';
   
+export const styles = {
+  titleHeader: {
+    color: "white",
+    textAlign: "center",
+    background: "grey",
+    fontSize: "40px",
+  },
+  eachDesc: {
+    color: "blue",
+    fontSize: "1.1em"
+  }
+
+}
+
+
+
 class Worker extends Component {
    state = { worker: [] }
   componentDidMount() {
@@ -25,11 +41,17 @@ class Worker extends Component {
     const { id, name, title, experience, deleteWorker} = this.props
     return (
       <>
+    
+        
+     <Grid columns='4'>
+       <Grid.Row rows='3'>
+       <Grid.Column width={8}>
       <Card>
+      
         <Card.Content>
-        <Card.Header>{name}</Card.Header>
+        <Card.Header style={ styles.titleHeader }>{name}</Card.Header>
         <p>Title: {title}</p>
-        <Card.Description>Experience: {experience}</Card.Description>
+        <Card.Description style={ styles.eachDesc }>Experience: {experience}</Card.Description>
           {
           editing ? 
             <WorkerForm 
@@ -44,7 +66,12 @@ class Worker extends Component {
         <h3>{name}'s Services</h3>
         <Services workerId={id} />
         </Card.Content>
+        
         </Card>
+
+        </Grid.Column>
+        </Grid.Row>
+        </Grid>
       </>
     )
   }
