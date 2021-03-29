@@ -15,7 +15,7 @@ const WorkerList = ({ workers, deleteWorker, updateWorker }) => {
           
         />
             <br />
-            <hr></hr>
+           
           </>
         )
       }
