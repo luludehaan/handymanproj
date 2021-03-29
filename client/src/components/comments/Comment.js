@@ -1,4 +1,3 @@
-
 const Comment = ({ author, body, date, id}) => {
   
   return (
