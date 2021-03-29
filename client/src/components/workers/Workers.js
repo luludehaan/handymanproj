@@ -2,6 +2,7 @@ import { Component } from 'react';
 import axios from 'axios';
 import WorkerList from './WorkerList';
 import WorkerForm from './WorkerForm';
+import {Div, H1, H2, H3, Form1 } from '../styledComponents/workerStyles';
 
 class Workers extends Component {
   state = { workers: [] }
@@ -44,17 +45,18 @@ class Workers extends Component {
   render() {
     const { workers } = this.state
     return (
-      <>
-        <h1>Workers</h1>
-        <h2>Add a Handyman</h2>
+      <Div>
+        <H1>Workers</H1>
+        <H3>Add a Handyman</H3>
+        <Form1>
         <WorkerForm addWorker={this.addWorker} />
-        <br></ br>
-        <h2>Available Handymen</h2>
+        </Form1>
+        <H2>Available Handymen</H2>
         <WorkerList
           workers={workers}
           deleteWorker={this.deleteWorker}
           updateWorker={this.updateWorker}/>
-      </>
+      </Div>
     )
   }
 }

@@ -1,10 +1,18 @@
 import { Component } from 'react';
 import Services from '../services/Services';
 import WorkerForm from '../workers/WorkerForm';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import {MyButton, Spacing} from '../styledComponents/workerStyles';
 
+export const styles = {
+cards: {
+  border: "1px solid black",
+  boxShadow: "0px 0px 10px black",
+},
+
+}
   
 class Worker extends Component {
    state = { worker: [] }
@@ -27,14 +35,14 @@ class Worker extends Component {
     const { editing } = this.state
     const { id, name, title, experience, deleteWorker} = this.props
     return (
-      <>
-        <Card>
+      <Spacing>
+        <Card style={ styles.cards }>
           <Card.Content>
-            <Card.Header>Name: {name}</Card.Header>
+            <Card.Header >Name: {name}</Card.Header>
             <Card.Meta>Title: {title}</Card.Meta>
             <Card.Description>Experience: {experience}</Card.Description>
             <br></br>
-        <button onClick={() => deleteWorker(id)}>Delete Handyman</button>
+        <MyButton onClick={() => deleteWorker(id)}>Delete Handyman</MyButton>
           {
           editing ? 
             <WorkerForm 
@@ -42,14 +50,14 @@ class Worker extends Component {
               toggleForm={this.toggleForm}
             />
           :
-            <button onClick={() => this.toggleForm()}>Edit Handyman</button>
+            <MyButton onClick={() => this.toggleForm()}>Edit Handyman</MyButton>
           
         }
         <br />
           <Services workerId={id} />
           </Card.Content>
           </Card>
-      </>
+      </Spacing>
     )
   }
 }

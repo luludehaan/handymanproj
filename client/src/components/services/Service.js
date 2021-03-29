@@ -1,8 +1,12 @@
 import { Component } from 'react';
 import Services from '../services/Services';
 import ServiceForm from '../services/ServiceForm';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, GridColumn, Icon, Image } from 'semantic-ui-react'
 import axios from 'axios';
+import { Grid } from 'semantic-ui-react'
+import { MyButton, HH, Div, B } from '../styledComponents/serviceStyles';
+
+
   
 class Service extends Component {
  
@@ -26,13 +30,14 @@ state = { service: [] }
     const { editing } = this.state
     const { id, job, description, price, deleteService} = this.props
     return (
-      <>
+      <B>
         
         <h5>Job: {job}</h5>
         <h5>Description: {description}</h5>
-        <h5>Price: {price}</h5>
+        <HH>Price: {price}</HH>
         <br></br>
-        <button onClick={() => deleteService(id)}>Delete Service</button>
+        <Div>
+        <MyButton onClick={() => deleteService(id)}>Delete Service</MyButton>
           {
           editing ? 
             <ServiceForm 
@@ -40,12 +45,14 @@ state = { service: [] }
               toggleForm={this.toggleForm}
             />
           :
-            <button onClick={() => this.toggleForm()}>Edit Service</button>
+            <MyButton onClick={() => this.toggleForm()}>Edit Service</MyButton>
         }
+       </Div>
+        
         <br />
       
           
-      </>
+      </B>
     )
   }
 }
