@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import axios from 'axios';
+import CommentForm from '../comments/CommentForm';
 import Comment from './Comment';
 
 class Comments extends Component {
@@ -14,7 +15,7 @@ class Comments extends Component {
   }
   addComment = (comment) => {
     const { serviceId } = this.props
-    axios.post(`/api/services/${serviceId}/comments`, { comment })
+    axios.post(`/api/services/${serviceId}/comments/`, { comment })
       .then( res => {
         const { comments } = this.state 
         this.setState({ comments: [...comments, res.data ]})
@@ -34,8 +35,10 @@ class Comments extends Component {
     const { comments } = this.state
     return (
       <>
+        <h1>add a new comment</h1>
+        <CommentForm addComment={this.addComment} />
         { comments.map( c => 
-          <Comment key={c.id} {...c} deleteComment={this.deleteComment} />
+          <CommentForm key={c.id} {...c} deleteComment={this.deleteComment} />
         )}
       </>
     )
