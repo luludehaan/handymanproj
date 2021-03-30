@@ -1,62 +1,62 @@
-import { Component } from 'react';
+import { Component } from "react";
 
 class ServiceForm extends Component {
-  state = { job:"", description:"", price:"" }
+  state = { job: "", description: "", price: "" };
 
   componentDidMount() {
     if (this.props.id) {
-      const { id, job, description, price } = this.props 
-      this.setState({ id, job, description, price })
+      const { id, job, description, price } = this.props;
+      this.setState({ id, job, description, price });
     }
   }
 
   handleChange = (e) => {
-    const { name, value } = e.target
-    this.setState({ [name]: value })
-  }
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
 
   handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (this.props.id) {
-      const { updateService, id, toggleForm } = this.props 
-      updateService(id, this.state)
-      toggleForm()
+      const { updateService, id, toggleForm } = this.props;
+      updateService(id, this.state);
+      toggleForm();
     } else {
-      this.props.addService(this.state)
+      this.props.addService(this.state);
     }
-    this.setState({ job:"", description:"", price:"", })
-  }
+    this.setState({ job: "", description: "", price: "" });
+  };
   render() {
-    const { job, description, price } = this.state
-    return(
+    const { job, description, price } = this.state;
+    return (
       <form onSubmit={this.handleSubmit}>
-        <input 
+        <input
           type="text"
           name="job"
-          value={job} 
-          onChange={this.handleChange} 
+          value={job}
+          onChange={this.handleChange}
           required
           placeholder="Job"
         />
-        <input 
+        <input
           type="text"
           name="description"
-          value={description} 
-          onChange={this.handleChange} 
+          value={description}
+          onChange={this.handleChange}
           required
           placeholder="Description"
         />
-        <input 
+        <input
           type="text"
           name="price"
-          value={price} 
-          onChange={this.handleChange} 
+          value={price}
+          onChange={this.handleChange}
           required
           placeholder="Price"
         />
         <button type="submit">Submit</button>
       </form>
-    )
+    );
   }
 }
 export default ServiceForm;
