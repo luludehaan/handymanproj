@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import axios from 'axios';
 import CommentForm from '../comments/CommentForm';
-import Comment from './Comment';
+import Comment from '../comments/Comment';
 
 class Comments extends Component {
   state = { comments: [] }
@@ -35,7 +35,7 @@ class Comments extends Component {
     const { comments } = this.state
     return (
       <>
-        <h1>add a new comment</h1>
+        <h1>Add Comment</h1>
         <CommentForm addComment={this.addComment} />
         { comments.map( c => 
           <CommentForm key={c.id} {...c} deleteComment={this.deleteComment} />

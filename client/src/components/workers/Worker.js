@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Services from '../services/Services';
 import WorkerForm from '../workers/WorkerForm';
+import Comments from '../comments/Comments'
 import { Card, Icon, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -46,7 +47,8 @@ class Worker extends Component {
           
         }
         <br />
-          <Services workerId={id} />
+            <Services workerId={id} />
+            <Comments serviceId={id} />
           </Card.Content>
           </Card>
       </>
