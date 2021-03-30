@@ -6,6 +6,10 @@ before_action :set_comment, except: [:index, :create]
     render json: @service.comments
   end
 
+  def show
+    render json: @comment
+  end
+
   def create
     @comment = @service.comments.new(comment_params)
     if @comment.save
@@ -30,7 +34,7 @@ before_action :set_comment, except: [:index, :create]
 
   private
     def comment_params
-      params.require(:comment).permit(:author, :body)
+      params.require(:comment).permit(:author, :body, :date)
     end
     
     def set_service
@@ -40,6 +44,4 @@ before_action :set_comment, except: [:index, :create]
     def set_comment
       @comment = @service.comments.find(params[:id])
     end
-
-
 end
