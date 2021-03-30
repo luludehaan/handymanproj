@@ -1,19 +1,24 @@
 import { Component } from 'react';
 import Services from '../services/Services';
 import WorkerForm from '../workers/WorkerForm';
-import { Card, Icon, Image, Button } from 'semantic-ui-react'
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import {MyButton, Spacing} from '../styledComponents/workerStyles';
-
+import { Card, Grid, GridColumn, Icon, Image } from 'semantic-ui-react';
+  
 export const styles = {
-cards: {
-  border: "1px solid black",
-  boxShadow: "0px 0px 10px black",
-},
+  titleHeader: {
+    color: "white",
+    textAlign: "center",
+    background: "grey",
+    fontSize: "40px",
+  },
+  eachDesc: {
+    color: "blue",
+    fontSize: "1.1em"
+  }
 
 }
-  
+
+
+
 class Worker extends Component {
    state = { worker: [] }
   componentDidMount() {
@@ -35,14 +40,18 @@ class Worker extends Component {
     const { editing } = this.state
     const { id, name, title, experience, deleteWorker} = this.props
     return (
-      <Spacing>
-        <Card style={ styles.cards }>
-          <Card.Content>
-            <Card.Header >Name: {name}</Card.Header>
-            <Card.Meta>Title: {title}</Card.Meta>
-            <Card.Description>Experience: {experience}</Card.Description>
-            <br></br>
-        <MyButton onClick={() => deleteWorker(id)}>Delete Handyman</MyButton>
+      <>
+    
+        
+     <Grid columns='4'>
+       <Grid.Row rows='3'>
+       <Grid.Column width={8}>
+      <Card>
+      
+        <Card.Content>
+        <Card.Header style={ styles.titleHeader }>{name}</Card.Header>
+        <p>Title: {title}</p>
+        <Card.Description style={ styles.eachDesc }>Experience: {experience}</Card.Description>
           {
           editing ? 
             <WorkerForm 
@@ -53,11 +62,17 @@ class Worker extends Component {
             <MyButton onClick={() => this.toggleForm()}>Edit Handyman</MyButton>
           
         }
-        <br />
-          <Services workerId={id} />
-          </Card.Content>
-          </Card>
-      </Spacing>
+         <br />
+        <h3>{name}'s Services</h3>
+        <Services workerId={id} />
+        </Card.Content>
+        
+        </Card>
+
+        </Grid.Column>
+        </Grid.Row>
+        </Grid>
+      </>
     )
   }
 }
