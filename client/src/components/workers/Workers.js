@@ -2,6 +2,7 @@ import { Component } from "react";
 import axios from "axios";
 import WorkerList from "./WorkerList";
 import WorkerForm from "./WorkerForm";
+import { Form1 } from "../styledComponents/workerStyles";
 
 class Workers extends Component {
   state = { workers: [] };
@@ -51,7 +52,9 @@ class Workers extends Component {
       <>
         <h1>Workers</h1>
         <h2>Add a Handyman</h2>
+        
         <WorkerForm addWorker={this.addWorker} />
+       
         <br></br>
         <h2>Available Handymen</h2>
         <WorkerList

@@ -1,9 +1,10 @@
 import Worker from "./Worker";
 import { Grid } from "semantic-ui-react";
+import {Back} from '../styledComponents/workerStyles';
 
 const WorkerList = ({ workers, deleteWorker, updateWorker }) => {
   return (
-    <>
+    <Back>
       <Grid>
         <Grid.Row columns={3}>
           {workers.map((w) => (
@@ -19,7 +20,7 @@ const WorkerList = ({ workers, deleteWorker, updateWorker }) => {
           ))}
         </Grid.Row>
       </Grid>
-    </>
+    </Back>
   );
 };
 export default WorkerList;

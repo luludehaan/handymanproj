@@ -3,6 +3,7 @@ import Services from "../services/Services";
 import WorkerForm from "../workers/WorkerForm";
 import Comments from "../comments/Comments";
 import { Card, Icon, Image } from "semantic-ui-react";
+import {MyButton, Spacing} from '../styledComponents/workerStyles';
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -28,6 +29,7 @@ class Worker extends Component {
     const { id, name, title, experience, deleteWorker } = this.props;
     return (
       <>
+      <Spacing>
         <Card>
           <Card.Content>
             <Card.Header>
@@ -53,6 +55,7 @@ class Worker extends Component {
             <Comments serviceId={id} />
           </Card.Content>
         </Card>
+      </Spacing>
       </>
     );
   }
