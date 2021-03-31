@@ -30,7 +30,7 @@ export const MyButton = styled.button`
 
 `
 export const Form1 =styled.form`
-margin-left: 10px;
+margin: 0px 73% 0px 10px;
 
 
 `
@@ -48,4 +48,7 @@ export const Spacing = styled.div`
 display: flex;
 justify-content: center;
 `
+export const Back = styled.div`
+background: lightgrey;
 
+`

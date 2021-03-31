@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Button, Form, Rating } from 'semantic-ui-react';
 
 class CommentForm extends Component {
   state = { author: "", body: "", date: "" };
@@ -29,8 +30,8 @@ class CommentForm extends Component {
   render() {
     const { author, body, date } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Input
           type="text"
           name="author"
           value={author}
@@ -38,7 +39,7 @@ class CommentForm extends Component {
           required
           placeholder="Author"
         />
-        <input
+        <Form.TextArea
           type="text"
           name="body"
           value={body}
@@ -46,7 +47,7 @@ class CommentForm extends Component {
           required
           placeholder="Text"
         />
-        <input
+        <Form.Input
           type="text"
           name="date"
           value={date}
@@ -54,8 +55,8 @@ class CommentForm extends Component {
           required
           placeholder="Date"
         />
-        <button type="submit">Submit</button>
-      </form>
+        <Button type="submit">Submit</Button>
+      </Form>
     );
   }
 }

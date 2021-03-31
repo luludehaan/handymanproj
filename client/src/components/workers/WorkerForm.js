@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Form, Button } from 'semantic-ui-react';
 
 class WorkerForm extends Component {
   state = { name: "", title: "", experience: "" };
@@ -29,8 +30,8 @@ class WorkerForm extends Component {
   render() {
     const { name, title, experience } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Input
           type="text"
           name="name"
           value={name}
@@ -38,7 +39,7 @@ class WorkerForm extends Component {
           required
           placeholder="Name"
         />
-        <input
+        <Form.Input
           type="text"
           name="title"
           value={title}
@@ -46,7 +47,7 @@ class WorkerForm extends Component {
           required
           placeholder="Title"
         />
-        <input
+        <Form.Input
           type="text"
           name="experience"
           value={experience}
@@ -54,8 +55,8 @@ class WorkerForm extends Component {
           required
           placeholder="Experience"
         />
-        <button type="submit">Submit</button>
-      </form>
+        <Button type="submit">Submit</Button>
+      </Form>
     );
   }
 }
