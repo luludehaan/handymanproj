@@ -33,13 +33,13 @@ class Worker extends Component {
         <Card>
           <Card.Content>
             <Card.Header>
-              <Link
+              {/* <Link
                 to={{
                   pathname: `/workers/${id}`,
                 }}
-              >
+              > */}
                 {name}
-              </Link>
+              {/* </Link> */}
             </Card.Header>
             <Card.Meta>Title: {title}</Card.Meta>
             <Card.Description>Experience: {experience}</Card.Description>
