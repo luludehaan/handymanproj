@@ -1,5 +1,5 @@
 import { Component } from "react";
-import {Button, Form} from 'semantic-ui-react';
+import {Button, Form, Icon} from 'semantic-ui-react';
 
 class ServiceForm extends Component {
   state = { job: "", description: "", price: "" };
@@ -55,7 +55,7 @@ class ServiceForm extends Component {
           required
           placeholder="Price"
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit"><Icon name="check"></Icon>Submit</Button>
       </Form>
     );
   }
