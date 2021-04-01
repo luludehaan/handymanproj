@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Button, Form, Rating } from 'semantic-ui-react';
+import { Button, Form } from "semantic-ui-react";
 
 class CommentForm extends Component {
   state = { author: "", body: "", date: "" };

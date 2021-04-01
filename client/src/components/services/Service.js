@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ServiceForm from "../services/ServiceForm";
-import { Card, Icon, Image } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import axios from "axios";
 
 class Service extends Component {
@@ -29,11 +29,20 @@ class Service extends Component {
         <h5>Description: {description}</h5>
         <h5>Price: {price}</h5>
         <br></br>
-        <button onClick={() => deleteService(id)}>Delete Service</button>
+        <Button
+          color="red"
+          size="mini"
+          onClick={() => deleteService(id)}>
+          Delete Service
+        </Button>
         {editing ? (
           <ServiceForm {...this.props} toggleForm={this.toggleForm} />
         ) : (
-          <button onClick={() => this.toggleForm()}>Edit Service</button>
+          <Button
+            size="mini"
+            onClick={() => this.toggleForm()}>
+            Edit Service
+          </Button>
         )}
         <br />
       </>
