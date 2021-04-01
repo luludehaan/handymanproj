@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Form, Button } from 'semantic-ui-react';
+import { Form, Button, Icon } from 'semantic-ui-react';
 
 class WorkerForm extends Component {
   state = { name: "", title: "", experience: "" };
@@ -55,7 +55,7 @@ class WorkerForm extends Component {
           required
           placeholder="Experience"
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit"><Icon name="check"></Icon>Submit</Button>
       </Form>
     );
   }

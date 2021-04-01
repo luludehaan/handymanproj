@@ -1,6 +1,7 @@
 import { Component } from "react";
 import axios from "axios";
 import CommentForm from "../comments/CommentForm";
+import { Button } from "semantic-ui-react";
 
 class Comment extends Component {
   state = { comment: [] };
@@ -29,11 +30,20 @@ class Comment extends Component {
         <h5>date: {date}</h5>
         <br></br>
         <div>
-          <button onClick={() => deleteComment(id)}>Delete Comment</button>
+          <Button
+            color="red"
+            size="mini"
+            onClick={() => deleteComment(id)}>
+            Delete Comment
+          </Button>
           {editing ? (
             <CommentForm {...this.props} toggleForm={this.toggleForm} />
           ) : (
-            <button onClick={() => this.toggleForm()}>Edit Comment</button>
+              <Button
+                size="mini"
+                onClick={() => this.toggleForm()}>
+              Edit Comment
+            </Button>
           )}
         </div>
         <br />
