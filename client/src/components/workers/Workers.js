@@ -50,7 +50,7 @@ class Workers extends Component {
     const { workers } = this.state;
     return (
       <>
-        <h1>Workers</h1>
+        <h1>Handymen & Handywomen</h1>
         <h2>Add a Handyman</h2>
         
         <WorkerForm addWorker={this.addWorker} />
