@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Button, Form } from "semantic-ui-react";
+import Clearable from "./Stars";
 
 class CommentForm extends Component {
   state = { author: "", body: "", date: "" };
@@ -31,6 +32,7 @@ class CommentForm extends Component {
     const { author, body, date } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
+        <Clearable></Clearable>
         <Form.Input
           type="text"
           name="author"
