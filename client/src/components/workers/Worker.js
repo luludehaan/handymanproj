@@ -44,11 +44,11 @@ class Worker extends Component {
             <Card.Meta>Title: {title}</Card.Meta>
             <Card.Description>Experience: {experience}</Card.Description>
             <br></br>
-            <Button size="mini" color="red" onClick={() => deleteWorker(id)}>Delete Handyman</Button>
+            <Button size="mini" color="red" onClick={() => deleteWorker(id)}><Icon name="trash"></Icon>Delete Handyman</Button>
             {editing ? (
               <WorkerForm {...this.props} toggleForm={this.toggleForm} />
             ) : (
-              <Button size="mini" onClick={() => this.toggleForm()}>Edit Handyman</Button>
+              <Button size="mini" onClick={() => this.toggleForm()}><Icon name="edit"></Icon>Edit Handyman</Button>
             )}
             <br />
             <Services workerId={id} />
