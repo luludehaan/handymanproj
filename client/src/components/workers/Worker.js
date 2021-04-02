@@ -4,7 +4,7 @@ import WorkerForm from "../workers/WorkerForm";
 import Comments from "../comments/Comments";
 import { Card, Icon, Button } from "semantic-ui-react";
 import { Spacing } from '../styledComponents/workerStyles';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 class Worker extends Component {
@@ -38,9 +38,9 @@ class Worker extends Component {
                   pathname: `/workers/${id}`,
                   state: { ...w }
                 }}
-              > 
+              >  */}
                 {name}
-               </Link> */}
+               {/* </Link> */}
             </Card.Header>
             <Card.Meta>Title: {title}</Card.Meta>
             <Card.Description>Experience: {experience}</Card.Description>
