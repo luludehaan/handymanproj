@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom';
+import handyman404 from '../images/handyman404.jpg';
 
 const NoMatch = () => {
   return (
     <>
-      <h1>404: Sorry, this page can't be found.</h1>
+      <div>
+        <img src={handyman404} alt="404: Sorry, this page can't be found." />
+      </div>
       <Link to='/'>
-        Return home
+        Return Home
       </Link>
+      
     </>
   )
 }

@@ -7,6 +7,7 @@ import Navbar from './components/shared/Navbar';
 import Workers from './components/workers/Workers';
 import Worker from './components/workers/Worker';
 import { Container } from 'semantic-ui-react';
+
 const App = () => (
   <>
     <Navbar /> 
