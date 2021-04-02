@@ -36,6 +36,7 @@ margin: 0px 73% 0px 10px;
 `
 
 
+
 export const Div = styled.div`
 background: #cea972;
 

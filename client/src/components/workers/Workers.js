@@ -2,7 +2,6 @@ import { Component } from "react";
 import axios from "axios";
 import WorkerList from "./WorkerList";
 import WorkerForm from "./WorkerForm";
-import { Form1 } from "../styledComponents/workerStyles";
 
 class Workers extends Component {
   state = { workers: [] };
